@@ -1,0 +1,74 @@
+doctype html
+
+html
+    head
+        //bootstrap
+        link(rel='stylesheet' href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous')
+
+        script(src="/JS/bookListing.js")
+        //script(src="/JS/navbar.js")
+        //custom css
+        link(rel="stylesheet" href="/CSS/navbar.css")
+        link(rel="stylesheet" href="/CSS/root.css")
+        link(rel="stylesheet" href="/CSS/sidebar.css")
+        link(rel="stylesheet" href="/CSS/bookListing.css")
+
+
+    body
+        include navbar
+        .page-content
+            .filler
+            include sidebar
+
+            .book-listing-container
+                .card.book-info
+                    img(src="book.jpeg").book-img
+                    table.table
+                        thead
+                            tr
+                                th "Tile of the book,';as d,fkmdsa fklmdsalkmf lkasmflkm Tile of the book"
+                                //th(style="cellSpaceing: 100px")
+                        tbody
+                            tr
+                                th(scope='row') Author:
+                                td Mark Twain the Rock Johnson
+                            //tr
+                                //th(scope='row') Edition:
+                                //td 9th
+                            tr
+                                th(scope='row') Course Code:
+                                td LNG 199
+                - const offers = [{name: "berk", edition: "9th", description: "askfmsoadfasf asdif jaosidfj asf", price: "632"}, {name: "serdar", edition: "6th", description: "askfmsoadfasf asdif jaosidfj asf", price: "6872"}, {name: "berkan", edition: "19th", description: "askfmsoadfasf asdif jaosidfj asf", price: "132"},{name: "berk", edition: "9th", description: "askfmsoadfasf asdif jaosidfj asf", price: "632"}, {name: "serdar", edition: "6th", description: "askfmsoadfasf asdif jaosidfj asf", price: "6872"}, {name: "berkan", edition: "19th", description: "askfmsoadfasf asdif jaosidfj asf", price: "132"},{name: "berk", edition: "9th", description: "askfmsoadfasf asdif jaosidfj asf", price: "632"}, {name: "serdar", edition: "6th", description: "askfmsoadfasf asdif jaosidfj asf", price: "6872"}, {name: "berkan", edition: "19th", description: "askfmsoadfasf asdif jaosidfj asf", price: "132"}]
+                .card.book-offers
+                    for item in offers
+                        .book-offer-cell
+                            p.name=item.name
+                            .edition
+                                p.text Edition:
+                                p.badge.badge-light.edition-bg=item.edition
+                            p.price=item.price + " TL"
+                                button.btn.btn-light.bi.bi-info-lg
+                        #overlay
+                        .book-offer-popup
+                            .btn-container
+                                button.btn.esc X
+                            table.table
+                                thead
+                                    tr
+                                tbody
+                                    tr
+                                        th(scope='row') Edition:
+                                        td=item.edition
+                                    tr
+                                        th(scope='row') Course Code:
+                                        td LNG 199
+                                    tr
+                                        th(scope='row') Price:
+                                        td=item.price
+                            textarea(disabled).description=item.description
+                            .btn-container
+                                button.btn.btn-success Purchase
+
+            .filler
+        include footer

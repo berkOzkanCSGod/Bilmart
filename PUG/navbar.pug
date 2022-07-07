@@ -1,0 +1,51 @@
+- const filters = ["CS", "EEE", "ME", "MTH", "PSYC", "POLS", "ARTS", "IE",]
+
+
+script(src="/JS/navbar.js")
+link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css")
+
+//contains everything
+.navbar-container
+    img(src="logo.png")#site-logo
+    .search-bar-container
+        .input-group
+            .input-group-prepend
+                .input-group-text
+                    i.bi.bi-search
+            input#sb(type="text")
+        button.btn.btn-light#filter-btn filters
+
+    .utilities
+        button.btn.btn-light.bi.bi-gear-wide#settings
+        button.btn.btn-light.bi.bi-box-arrow-in-right#login
+
+    //the drop down
+    .card.drop-down-container
+        .check-box-container
+            for item in filters
+                .a-filter
+                    input.form-check-input(type="checkbox" id=item).ck-box
+                    label.form-check-label(for=item).ck-label=item
+
+        .btns-container
+            button.btn.btn-light#filter-reset Reset
+            button.btn.btn-primary#filter-apply Apply
+
+    #overlay
+    .login-popup#login-prompt
+
+        form
+            .form-group
+                label(for='loginEmailInput') Email address
+                input#loginEmailInput.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email')
+                small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+                .alert.alert-danger#email-incorrect-alert(role="alert") Your email cannot be found
+            .form-group
+                label(for='loginPassInput') Password
+                input#loginPassInput.form-control(type='password' placeholder='Password')
+                .alert.alert-danger#password-incorrect-alert(role="alert") Your password is incorrect
+            .loginSubmitContainer
+                button.btn.btn-primary(type='submit' disabled=false)#loginSubmit Submit
+
+
+.alert.alert-success.hide.email-login-success Login was successful!

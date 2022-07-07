@@ -1,0 +1,42 @@
+:root {
+    --color-primary: #BA0018;
+    --color-primary-light: rgba(136, 183, 253, 0.42);
+    --color-accent: #BA0018;
+    --color-font: white;
+    --color-base: #ffffff;
+    --font-family: sans-serif;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--color-font);
+    font-family: var(--font-family);
+    /*font-weight: bold;*/
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 200px;
+    background-color: var(--color-primary);
+    margin-top: 50px;
+}
+
+.page-content {
+    display: flex;
+    width: 100vw;
+    margin: 15px 0 0 0;
+}
+
+.filler {
+    flex-grow: 1;
+    max-width: 10vw;
+}
+
+ul {
+    list-style: none;
+}

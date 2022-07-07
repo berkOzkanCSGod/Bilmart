@@ -1,0 +1,79 @@
+
+<script src="/JS/navbar.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"/>
+<!--contains everything-->
+<div class="navbar-container"><img src="logo.png" id="site-logo"/>
+  <div class="search-bar-container">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="bi bi-search"></i></div>
+      </div>
+      <input id="sb" type="text"/>
+    </div>
+    <button class="btn btn-light" id="filter-btn">filters</button>
+  </div>
+  <div class="utilities">
+    <button class="btn btn-light bi bi-gear-wide" id="settings"></button>
+    <button class="btn btn-light bi bi-box-arrow-in-right" id="login"></button>
+  </div>
+  <!--the drop down-->
+  <div class="card drop-down-container">
+    <div class="check-box-container">
+      <div class="a-filter">
+        <input class="form-check-input ck-box" type="checkbox" id="CS"/>
+        <label class="form-check-label ck-label" for="CS">CS</label>
+      </div>
+      <div class="a-filter">
+        <input class="form-check-input ck-box" type="checkbox" id="EEE"/>
+        <label class="form-check-label ck-label" for="EEE">EEE</label>
+      </div>
+      <div class="a-filter">
+        <input class="form-check-input ck-box" type="checkbox" id="ME"/>
+        <label class="form-check-label ck-label" for="ME">ME</label>
+      </div>
+      <div class="a-filter">
+        <input class="form-check-input ck-box" type="checkbox" id="MTH"/>
+        <label class="form-check-label ck-label" for="MTH">MTH</label>
+      </div>
+      <div class="a-filter">
+        <input class="form-check-input ck-box" type="checkbox" id="PSYC"/>
+        <label class="form-check-label ck-label" for="PSYC">PSYC</label>
+      </div>
+      <div class="a-filter">
+        <input class="form-check-input ck-box" type="checkbox" id="POLS"/>
+        <label class="form-check-label ck-label" for="POLS">POLS</label>
+      </div>
+      <div class="a-filter">
+        <input class="form-check-input ck-box" type="checkbox" id="ARTS"/>
+        <label class="form-check-label ck-label" for="ARTS">ARTS</label>
+      </div>
+      <div class="a-filter">
+        <input class="form-check-input ck-box" type="checkbox" id="IE"/>
+        <label class="form-check-label ck-label" for="IE">IE</label>
+      </div>
+    </div>
+    <div class="btns-container">
+      <button class="btn btn-light" id="filter-reset">Reset</button>
+      <button class="btn btn-primary" id="filter-apply">Apply</button>
+    </div>
+  </div>
+  <div id="overlay"></div>
+  <div class="login-popup" id="login-prompt">
+    <form>
+      <div class="form-group">
+        <label for="loginEmailInput">Email address</label>
+        <input class="form-control" id="loginEmailInput" type="email" aria-describedby="emailHelp" placeholder="Enter email"/><small class="form-text text-muted" id="emailHelp">We&apos;ll never share your email with anyone else.</small>
+        <div class="alert alert-danger" id="email-incorrect-alert" role="alert">Your email cannot be found</div>
+      </div>
+      <div class="form-group">
+        <label for="loginPassInput">Password</label>
+        <input class="form-control" id="loginPassInput" type="password" placeholder="Password"/>
+        <div class="alert alert-danger" id="password-incorrect-alert" role="alert">Your password is incorrect</div>
+      </div>
+      <div class="loginSubmitContainer">
+        <button class="btn btn-primary" type="submit" id="loginSubmit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="alert alert-success hide email-login-success">Login was successful!</div>

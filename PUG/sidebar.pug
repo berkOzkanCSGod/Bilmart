@@ -1,0 +1,10 @@
+
+
+- const departments = ["CS", "EEE", "ME", "MTH", "PSYC", "POLS", "ARTS", "IE"]
+
+
+.card.sidebar-container
+    p#sb-title Departments
+    ul#sb-list
+        for dep in departments
+            li.sb-item=" > "+dep

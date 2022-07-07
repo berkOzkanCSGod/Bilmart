@@ -1,0 +1,147 @@
+
+.book-listing-container {
+    width: 65vw;
+}
+
+.book-img {
+    width: 200px;
+    /*max-height: 200px;*/
+    align-self: center;
+    justify-self: center;
+    margin: 15px;
+    background-color: var(--color-base);
+    z-index: 9;
+}
+
+.book-info {
+    display: grid;
+    grid-template-columns: 1fr 3fr ;
+}
+
+.book-offers {
+    /*height: 300px;*/
+}
+
+.book-offer-cell {
+    color: black;
+    /*color: var(--color-base);*/
+    /*background-color: var(--color-primary);*/
+    /*border: 1px solid var(--color-accent);*/
+    border-bottom: 1px solid rgba(150, 150, 150, 0.21);
+    /*background-color: var(--color-primary);*/
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.book-offer-cell .name {
+    justify-self: center;
+    margin: 0;
+}
+
+.book-offer-cell .edition {
+    grid-gap: 20px;
+    display: flex;
+    flex-flow: row;
+    margin: 0;
+    align-items: center;
+}
+
+.book-offer-cell .edition .text {
+    margin: 0;
+}
+
+.book-offer-cell .edition .edition-bg {
+    font-size: 20px;
+    justify-content: center;
+    margin: 0;
+}
+
+.book-offer-cell .price  {
+    grid-gap: 20px;
+    display: flex;
+    flex-flow: row;
+    margin: 0;
+    align-items: center;
+    justify-content: end;
+    font-size: 20px;
+}
+
+.book-offer-popup {
+    position: fixed;
+    background-color: var(--color-base);
+    width: 600px;
+    padding: 10px;
+    border-radius: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    z-index: 0;
+    transition: 100ms ease-in-out;
+    pointer-events: all;
+}
+
+.book-offer-popup.active {
+    position: fixed;
+    background-color: var(--color-base);
+    width: 600px;
+    padding: 10px;
+    border-radius: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    transition: 100ms ease-in-out;
+    z-index: 100;
+    pointer-events: all;
+
+}
+
+.description{
+    resize: none;
+    width: 85%;
+}
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 0 0;
+    padding: 10px;
+}
+
+.esc {
+
+    justify-self: end;
+}
+
+
+#overlay {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+    /*transition: 200ms ease-in-out;*/
+
+}
+
+
+#overlay.active{
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 90;
+    position: fixed;
+    pointer-events: all;
+
+}

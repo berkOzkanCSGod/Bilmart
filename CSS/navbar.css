@@ -1,0 +1,186 @@
+
+
+.navbar-container {
+    height: 50px;
+    width: 100vw;
+    display: grid;
+
+    grid-template-columns: 1fr 6fr 1fr;
+    background-color: var(--color-primary);
+
+}
+
+#site-logo {
+    height: 50px;
+    justify-self: center;
+    z-index: 91;
+}
+
+.search-bar-container {
+    display: grid;
+    align-items: center;
+    justify-self: center;
+    grid-template-columns: 10fr 1fr;
+    width: 65vw;
+    min-width: 500px;
+    height: 50px;
+}
+
+#sb {
+    /*height: 30px;*/
+    margin: 0;
+    font-size: 25px;
+    width: 90%;
+    height: 40px;
+    align-self: center;
+
+}
+
+.input-group {
+    width: 105%;
+}
+
+.input-group-prepend {
+    align-self: center;
+    height: 39px;
+}
+
+#filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 60px;
+    z-index: 10;
+}
+
+.utilities {
+    justify-self: center;
+    align-self: center;
+}
+
+.drop-down-container {
+    background-color: var(--color-primary);
+    color: var(--color-base);
+    width: 400px;
+    position: fixed;
+    top: 55px;
+    left: 55vw;
+    transform: scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 101;
+}
+
+.drop-down-container.active {
+    background-color: var(--color-primary);
+    color: var(--color-base);
+    width: 400px;
+    position: fixed;
+    top: 55px;
+    left: 55vw;
+    transform: scale(1);
+    transition: 200ms ease-in-out;
+}
+
+.check-box-container {
+    display: grid;
+    width: 400px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.a-filter {
+    display: flex;
+    align-items: center;
+}
+
+.ck-box {
+    margin: 0 0 0 5px;
+}
+
+.ck-label {
+    margin-left: 20px;
+}
+
+.btns-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login-popup {
+    position: fixed;
+    z-index: 90;
+    /*transform: scale(0);*/
+}
+
+.loginSubmitContainer {
+    display: flex;
+    justify-content: end;
+}
+
+#login-prompt {
+    transform: scale(0);
+    top: 0;
+    left: 0;
+}
+
+#login-prompt.active {
+    position: fixed;
+    width: 500px;
+    background-color: var(--color-base);
+    border-radius: 3px;
+    z-index: 100;
+    padding: 20px;
+    pointer-events: all;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+#overlay {
+    transform: scale(0);
+    background-color: rgba(0, 0, 0, 0.29);
+    pointer-events: none;
+    z-index: 90;
+}
+
+#overlay.active {
+    transform: scale(1);
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.29);
+    position: fixed;
+    pointer-events: all;
+}
+
+#password-incorrect-alert.active, #email-incorrect-alert.active{
+    height: 30px;
+    width: 60%;
+    text-align: center;
+    font-size: 13px;
+    margin: 10px auto;
+    padding: 5px;
+    transform: scale(1);
+    transition: 100ms ease-in-out;
+
+}
+
+#password-incorrect-alert, #email-incorrect-alert{
+    transform: scale(0);
+    margin-bottom: -40px;
+}
+
+.email-login-success {
+    position: fixed;
+    z-index: 100;
+    top: 95%;
+    left: 120px;
+    transform: translate(-50%,-50%) scale(1);
+    transition: 100ms ease-in-out;
+}
+
+.hide {
+    display: none;
+    transition: 100ms ease-in-out;
+}
+
