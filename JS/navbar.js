@@ -1,8 +1,6 @@
 
 let loggedIn = false;
 
-window.addEventListener("load", () => {
-
     let homeBtn = document.getElementById("site-logo");
     let filterBtn = document.getElementById("filter-btn")
     let dropdownContainer =  document.querySelector(".drop-down-container")
@@ -82,7 +80,15 @@ window.addEventListener("load", () => {
                     }
                 }, 1500);
 
+
+                //change icon when logged in
                 loggedIn = true;
+                if (loggedIn){
+                    loginBtn.classList.remove("bi-box-arrow-in-right")
+                    loginBtn.classList.add("bi-person-circle")
+                }
+
+
             }
 
         } else {
@@ -136,5 +142,6 @@ window.addEventListener("load", () => {
         loginPrompt.classList.remove("active")
     })
 
-})
+
+
 
